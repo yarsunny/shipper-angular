@@ -16,9 +16,27 @@
       <app-driver-search
         (queryChanged)="onQueryChange($event)"
       ></app-driver-search>
-      <!-- <button class="w-full mt-2 md:mt-0 md:ml-2 md:w-auto md:inline">
-      Tambah Driver &#43;
-    </button> -->
+      <button
+        class="
+          w-full
+          mt-2
+          md:mt-0 md:ml-2 md:w-auto md:inline
+          border-orange-600
+          disabled:cursor-not-allowed
+          hover:bg-orange-500
+          cursor-pointer
+          border-solid
+          bg-orange-600
+          text-white
+          px-4
+          h-12
+          uppercase
+          font-bold
+          text-sm
+        "
+      >
+        Tambah Driver &#43;
+      </button>
     </div>
   </div>
   <app-driver-list
@@ -28,7 +46,16 @@
   <div class="flex justify-center items-center mt-6">
     <button
       type="button"
-      class="text-lg disabled:text-slate-500 disabled:cursor-not-allowed cursor-pointer hover:text-orange-600 text-slate-800 font-semibold mr-4 md:mr-16"
+      class="
+        text-lg
+        disabled:text-slate-500 disabled:cursor-not-allowed
+        cursor-pointer
+        hover:text-orange-600
+        text-slate-800
+        font-semibold
+        mr-4
+        md:mr-16
+      "
       [disabled]="(driversData$ | async)?.currentPage <= 0"
       (click)="previous()"
     >
@@ -36,7 +63,14 @@
     </button>
     <button
       type="button"
-      class="text-lg disabled:text-slate-500 disabled:cursor-not-allowed cursor-pointer hover:text-orange-600 text-slate-800 font-semibold"
+      class="
+        text-lg
+        disabled:text-slate-500 disabled:cursor-not-allowed
+        cursor-pointer
+        hover:text-orange-600
+        text-slate-800
+        font-semibold
+      "
       [disabled]="
         (driversData$ | async)?.currentPage >=
         (driversData$ | async)?.totalPages - 1
