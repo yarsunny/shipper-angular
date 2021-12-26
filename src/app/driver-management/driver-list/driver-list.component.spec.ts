@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DriverListComponent } from './driver-list.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('DriverListComponent', () => {
   let component: DriverListComponent;
@@ -8,9 +8,9 @@ describe('DriverListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DriverListComponent ]
-    })
-    .compileComponents();
+      declarations: [DriverListComponent],
+      imports: [FontAwesomeModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
