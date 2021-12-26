@@ -1,1 +1,20 @@
-<router-outlet></router-outlet>
+<div class="antialiased h-screen">
+  <app-header></app-header>
+  <div class="flex md:h-body">
+    <!-- Web -->
+    <div class="hidden md:block flex-none w-64 h-full pt-8">
+      <app-sidebar></app-sidebar>
+    </div>
+
+    <!-- Mobile -->
+    <div
+      *ngIf="(mobileSidebarStatus$ | async) === 'open'"
+      class="block md:hidden z-40 fixed w-full h-32 bg-white"
+    >
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="h-full bg-stone-100 p-8 overflow-x-hidden w-full">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

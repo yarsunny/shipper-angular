@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BerandaComponent } from './beranda/beranda.component';
+import { BerandaComponent } from './beranda.component';
 
 const routes: Routes = [
   {

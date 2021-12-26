@@ -1,0 +1,21 @@
+<header class="h-header w-full flex justify-between items-center">
+  <button
+    type="button"
+    (click)="onClickMenu()"
+    class="md:hidden block ml-4 mb-2 cursor-pointer hover:text-orange-600"
+  >
+    <fa-icon [icon]="faBars" size="lg"></fa-icon>
+  </button>
+  <img
+    class="h-16 ml-5 md:ml-4"
+    src="https://bookface-images.s3.amazonaws.com/logos/8afeac8fec711d64037cb0f7d4579747f4d04d4a.png"
+    alt="logo"
+  />
+  <div class="flex items-center">
+    <div class="hidden md:block">
+      <span class="mr-1">Hello&#44;</span>
+      <span class="text-orange-600">Shipper User</span>
+    </div>
+    <fa-icon class="mr-5 ml-2" [icon]="faUserCircle" size="lg"></fa-icon>
+  </div>
+</header>

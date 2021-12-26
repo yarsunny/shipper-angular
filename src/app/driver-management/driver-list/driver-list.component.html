@@ -1,0 +1,17 @@
+<div
+  *ngIf="drivers.length === 0"
+  class="text-slate-800 p-6 font-bold text-center mt-5"
+>
+  No drivers found
+</div>
+
+<div
+  *ngIf="drivers.length > 0"
+  data-testid="driver-list"
+  class="md:overflow-x-auto md:whitespace-nowrap w-full"
+>
+  <app-driver-card
+    *ngFor="let driver of drivers"
+    [driver]="driver"
+  ></app-driver-card>
+</div>

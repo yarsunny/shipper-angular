@@ -1,0 +1,23 @@
+<div
+  [formGroup]="searchForm"
+  data-testid="search"
+  class="
+    flex
+    md:inline-flex
+    mt-4
+    md:mt-0
+    h-12
+    border-2 border-solid border-slate-200
+    bg-white
+    items-center
+  "
+>
+  <fa-icon class="mr-2 ml-2 text-orange-600" [icon]="faSearch" size="sm"></fa-icon>
+  <input
+    data-testid="search-input"
+    type="text"
+    formControlName="search"
+    placeholder="Cari Driver"
+    class="outline-none text-l"
+  />
+</div>

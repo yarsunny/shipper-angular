@@ -1,0 +1,113 @@
+<div class="w-100 md:inline-block shrink-0 md:w-[300px] md:mr-6 mt-6 bg-white">
+  <div
+    class="
+      w-full
+      flex
+      justify-between
+      items-center
+      border-slate-500
+      px-4
+      py-4
+      border-solid border-b
+    "
+  >
+    <div>
+      <span class="text-slate-500 text-sm">Driver ID</span>
+      <span class="text-orange-600 ml-2 font-semibold">
+        {{ driver.login.username }}
+      </span>
+    </div>
+    <fa-icon [icon]="faEllipsisH" class="text-slate-500" size="sm"></fa-icon>
+  </div>
+  <div class="w-100 px-6 pt-6 pb-8 inline-flex md:block">
+    <img
+      class="h-16 block md:hidden rounded-full shrink-0"
+      [src]="driver.picture.thumbnail"
+      alt="driver"
+    />
+    <img
+      class="hidden md:block rounded-full mb-4"
+      [src]="driver.picture.medium"
+      alt="driver"
+    />
+    <div className="ml-3 md:ml-0">
+      <!-- name -->
+      <div class="ml-3 md:ml-0">
+        <div class="mb-2">
+          <label class="leading-none text-xs text-slate-500">
+            Nama Driver
+          </label>
+          <div
+            class="
+              leading-none
+              overflow-hidden
+              w-[180px]
+              md:w-[250px]
+              text-ellipsis
+            "
+          >
+            {{ driver.name.first }}, {{ driver.name.last }}
+          </div>
+          <div></div>
+        </div>
+      </div>
+
+      <!-- telepon -->
+      <div class="ml-3 md:ml-0">
+        <div class="mb-2">
+          <label class="leading-none text-xs text-slate-500"> Telepon </label>
+          <div
+            class="
+              leading-none
+              overflow-hidden
+              w-[180px]
+              md:w-[250px]
+              text-ellipsis
+            "
+          >
+            {{ driver.phone }}
+          </div>
+          <div></div>
+        </div>
+      </div>
+
+      <!-- email -->
+      <div class="ml-3 md:ml-0 hidden md:block">
+        <div class="mb-2">
+          <label class="leading-none text-xs text-slate-500"> Email </label>
+          <div
+            class="
+              leading-none
+              overflow-hidden
+              w-[180px]
+              md:w-[250px]
+              text-ellipsis
+            "
+          >
+            {{ driver.email }}
+          </div>
+          <div></div>
+        </div>
+      </div>
+
+      <!-- dob -->
+      <div class="ml-3 md:ml-0 hidden md:block">
+        <div class="mb-2">
+          <label class="leading-none text-xs text-slate-500"> Age </label>
+          <div
+            class="
+              leading-none
+              overflow-hidden
+              w-[180px]
+              md:w-[250px]
+              text-ellipsis
+            "
+          >
+            {{ driver.dob.age }}
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

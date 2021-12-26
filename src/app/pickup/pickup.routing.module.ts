@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PickupComponent } from './pickup/pickup.component';
+import { PickupComponent } from './pickup.component';
 
 const routes: Routes = [
   {

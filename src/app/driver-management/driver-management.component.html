@@ -1,0 +1,49 @@
+<app-driver-management-loader
+  *ngIf="['loading', 'init'].includes((driversData$ | async)?.status)"
+></app-driver-management-loader>
+
+<ng-container *ngIf="(driversData$ | async)?.status === 'idle'">
+  <div class="bg-white py-4 px-6 md:flex justify-between">
+    <div>
+      <div class="text-xl md:text-2xl font-bold uppercase text-orange-600">
+        Driver Management
+      </div>
+      <div class="text-xs md:text-sm text-slate-600">
+        Data driver yang bekerja dengen Anda.
+      </div>
+    </div>
+    <div class="block md:inline-flex items-center">
+      <app-driver-search
+        (queryChanged)="onQueryChange($event)"
+      ></app-driver-search>
+      <!-- <button class="w-full mt-2 md:mt-0 md:ml-2 md:w-auto md:inline">
+      Tambah Driver &#43;
+    </button> -->
+    </div>
+  </div>
+  <app-driver-list
+    [drivers]="(driversData$ | async)?.pageDrivers"
+  ></app-driver-list>
+
+  <div class="flex justify-center items-center mt-6">
+    <button
+      type="button"
+      class="text-lg disabled:text-slate-500 disabled:cursor-not-allowed cursor-pointer hover:text-orange-600 text-slate-800 font-semibold mr-4 md:mr-16"
+      [disabled]="(driversData$ | async)?.currentPage <= 0"
+      (click)="previous()"
+    >
+      &#60; &nbsp; Previous Page
+    </button>
+    <button
+      type="button"
+      class="text-lg disabled:text-slate-500 disabled:cursor-not-allowed cursor-pointer hover:text-orange-600 text-slate-800 font-semibold"
+      [disabled]="
+        (driversData$ | async)?.currentPage >=
+        (driversData$ | async)?.totalPages - 1
+      "
+      (click)="next()"
+    >
+      Next Page &nbsp; &#62;
+    </button>
+  </div>
+</ng-container>

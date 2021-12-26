@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PickupComponent } from './pickup/pickup.component';
+import { PickupComponent } from './pickup.component';
 import { PickupRoutingModule } from './pickup.routing.module';
 
 @NgModule({

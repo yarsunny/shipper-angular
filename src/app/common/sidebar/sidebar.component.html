@@ -1,0 +1,29 @@
+<ul data-testid="sidebar">
+  <li
+    routerLink="/beranda"
+    [routerLinkActive]="activeClassName"
+    [class]="className"
+    (click)="onClickSidebarLink()"
+  >
+    <fa-icon class="w-8" [icon]="faHome" size="sm"></fa-icon>
+    <span class="ml-2">Beranda</span>
+  </li>
+  <li
+    routerLink="/driver-management"
+    [routerLinkActive]="activeClassName"
+    [class]="className"
+    (click)="onClickSidebarLink()"
+  >
+    <fa-icon class="w-8" [icon]="faMapMarkerAlt" size="sm"></fa-icon>
+    <span class="ml-2">Driver Management</span>
+  </li>
+  <li
+    routerLink="/pickup"
+    [routerLinkActive]="activeClassName"
+    [class]="className"
+    (click)="onClickSidebarLink()"
+  >
+    <fa-icon class="w-8" [icon]="faCalendarAlt" size="sm"></fa-icon>
+    <span class="ml-2">Pickup</span>
+  </li>
+</ul>
