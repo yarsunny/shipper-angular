@@ -3,6 +3,15 @@
 ></app-driver-management-loader>
 
 <ng-container *ngIf="(driversData$ | async)?.status === 'idle'">
+  <ng-template [ngTemplateOutlet]="driverManagementHeader"></ng-template>
+  <app-driver-list
+    [drivers]="(driversData$ | async)?.pageDrivers"
+  ></app-driver-list>
+  <ng-template [ngTemplateOutlet]="driverManagementPagination"> </ng-template>
+</ng-container>
+
+<!-- templates -->
+<ng-template #driverManagementHeader>
   <div class="bg-white py-4 px-6 md:flex justify-between">
     <div>
       <div class="text-xl md:text-2xl font-bold uppercase text-orange-600">
@@ -39,10 +48,9 @@
       </button>
     </div>
   </div>
-  <app-driver-list
-    [drivers]="(driversData$ | async)?.pageDrivers"
-  ></app-driver-list>
+</ng-template>
 
+<ng-template #driverManagementPagination>
   <div class="flex justify-center items-center mt-6">
     <button
       type="button"
@@ -80,4 +88,4 @@
       Next Page &nbsp; &#62;
     </button>
   </div>
-</ng-container>
+</ng-template>
